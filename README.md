@@ -1,5 +1,5 @@
 # fraud-detection-sql-powerbi
-"Projet d'analyse de fraudes bancaires avec SQL (BigQuery) et Power BI pour portfolio."
+"Projet d'analyse des transactions par carte de credit frauduleuses avec SQL (BigQuery) et Power BI pour portfolio."
 
 ## Mission 1 : Explorer la Structure de la Base de Données
 
