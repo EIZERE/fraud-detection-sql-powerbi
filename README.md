@@ -1,14 +1,25 @@
 # fraud-detection-sql-powerbi
 "Projet d'analyse des transactions par carte de credit frauduleuses avec SQL (BigQuery) et Power BI pour portfolio."
 
-## Mission 1 : Explorer la Structure de la Base de Données
+### Mission 1 : Explorer la Structure de la Base de Données
+- **Objectif** : Auditer la structure des tables `fraud_train` et `fraud_test` pour comprendre les colonnes, leurs types et la taille des données, en préparation de l’analyse des fraudes.
+- **Résultats** : 
+  - `fraud_train` : ~1 296 675 lignes, 23 colonnes (11 numériques, 12 textuelles).
+  - `fraud_test` : ~555 719 lignes, même structure.
+  - Aucune valeur NULL observée.
+- **Fichiers** :
+  - [mission1.sql](missions/mission1.sql) : Requêtes pour aperçu, colonnes et comptage
+  - [mission1_head.jpg](figs/mission1_head_f_Test.jpg) : Capture d’écran des 5 premières lignes (test)
+  - [mission1_columns.jpg](figs/mission1_columns_f_Test.jpg) : Capture d’écran des types de colonnes (Test)
+  - [mission1_count_Test.jpg](figs/mission1_count_f_test.jpg) : Capture d’écran Nombre de lignes (test)
+  - [mission1_head.jpg](figs/mission1_head_f_Train.jpg) : Capture d’écran des 5 premières lignes (train)
+  - [mission1_count_Train.jpg](figs/mission1_count_f_Train.jpg) : Capture d’écran Nombre de lignes (train)
+  - [mission1_columns.jpg](figs/mission1_columns_f_Train.jpg) : Capture d’écran des types de colonnes (train)
 
-- **Objectif** : Comprendre la structure des tables fraud_train/test pour analyse fraude.
-- **Résultats** : Train = ~1.3M lignes, Test = ~555k lignes, 23 colonnes (11 numériques, 12 textuelles).
-- **Fichiers** : [mission1.sql](missions/mission1.sql), [head](missions/mission1_head_f_Test.jpg),[head](missions/mission1_head_f_Train.jpg) [columns].(missions/mission1 columns Test.jpg),[columns].(missions/mission1_columns Train.jpg),[count].(missions/mission1_count Test.jpg), [count].missions/mission1_count Test.jpg).
-
-## Mission 2 : Identifier le Déséquilibre des Fraudes
-
-- **Objectif** : Calculer le % de transactions frauduleuses dans fraud_train/test.
-- **Résultats** : ~0.6% de fraudes dans train (7,506/1,296,675), confirmant dataset déséquilibré.
-- **Fichiers** : [mission2.sql](missions/mission2.sql), [fraud_counts](missions/mission2_fraud_counts_Train.jpg),[fraud_counts](missions/mission2_fraud_counts_Test.jpg)
+### Mission 2 : Identifier le Déséquilibre des Fraudes
+- **Objectif** : Calculer le pourcentage de transactions frauduleuses (`is_fraud=1`) pour évaluer le déséquilibre du dataset, crucial pour la détection des fraudes.
+- **Résultats** : ~0,58% de fraudes dans `fraud_train` (7 506/1 296 675), confirmant un dataset fortement déséquilibré, ce qui impacte les stratégies de détection.
+- **Fichiers** :
+  - [mission2.sql](missions/mission2.sql) : Requête pour le comptage des fraudes
+  - [mission2_fraud_counts_train.jpg](figs/mission2_fraud_counts_train.jpg) : Comptes fraudes/non-fraudes (train)
+  - [mission2_fraud_counts_test.jpg](figs/mission2_fraud_counts_test.jpg) : Capture d’écran des résultats (test)
