@@ -23,3 +23,12 @@
   - [mission2.sql](missions/mission2.sql) : Requête pour le comptage des fraudes
   - [mission2_fraud_counts_train.jpg](figs/mission2_fraud_counts_train.jpg) : Comptes fraudes/non-fraudes (train)
   - [mission2_fraud_counts_test.jpg](figs/mission2_fraud_counts_test.jpg) : Capture d’écran des résultats (test)
+
+### Mission 3 : Combiner les Datasets et Renommer les Colonnes
+- **Objectif** : Fusionner `fraud_train` et `fraud_test` en une table unifiée avec des noms de colonnes clairs pour faciliter l’analyse et le reporting.
+- **Résultats** : Table `fraud_combined` créée avec ~1 852 394 lignes, colonnes renommées (ex. : `amt` en `transaction_amount`).
+- **Fichiers** :
+  - [mission3.sql](missions/mission3.sql) : Requête pour combiner et renommer
+  - [mission3_head.csv](missions/mission3_head.csv) : 5 premières lignes
+  - [mission3_head.jpg](figs/mission3_head.jpg) : Capture d’écran des 5 premières lignes
+  - [mission3_count.jpg](figs/mission3_count.jpg) : Capture d’écran du comptage
