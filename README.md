@@ -32,3 +32,30 @@
   - [mission3_head.csv](missions/mission3_head.csv) : 5 premières lignes
   - [mission3_head.jpg](figs/mission3_head.jpg) : Capture d’écran des 5 premières lignes
   - [mission3_count.jpg](figs/mission3_count.jpg) : Capture d’écran du comptage
+
+**Technologies** : BigQuery (SQL), Power BI Desktop.  
+**Dataset** : `fraud_combined.csv` (combinaison de fraud_train/test).  
+**Objectifs** :  
+- SQL : Auditer la structure de la table (head, info, describe, imbalance).  
+- Power BI : Feature engineering (âge, distances, bins), calculs KPIs (taux de fraude, montant fraudé, etc.), visualisations (fraudes par ville/sexe, catégorie, âge, mois, heure, etc.).  
+
+## Structure du Référentiel
+- `data/` : Dataset `fraud_combined.csv`.
+- `sql/` : Script SQL pour exploration de la structure.
+- `powerbi/` : Fichier .pbix du tableau de bord.
+- `figs/` : Exports CSV et captures d’écran des visualisations.
+
+## Installation et Utilisation
+1. Clonez le repo : `git clone https://github.com/votreusername/fraud-detection-sql-powerbi.git`.
+2. Importez `fraud_combined.csv` dans BigQuery.
+3. Exécutez le script SQL dans BigQuery, exportez les résultats en CSV.
+4. Ouvrez `fraud_dashboard.pbix` dans Power BI Desktop, chargez les CSV.
+
+## Insights Clés
+- Dataset déséquilibré : 0,58% de fraudes.
+- Fraudes élevées dans `grocery_pos`, `shopping_net` ; montant moyen frauduleux ~530$.
+- Pics de fraudes en décembre, à 0-4h, chez les >60 ans.
+- Recommandation : Renforcer les alertes pour transactions >300$ dans `shopping_net`.
+
+## Licence
+MIT License.
