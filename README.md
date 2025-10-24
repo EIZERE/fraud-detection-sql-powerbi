@@ -1,6 +1,12 @@
 # fraud-detection-sql-powerbi
 "Projet d'analyse des transactions par carte de credit frauduleuses avec SQL (BigQuery) et Power BI pour portfolio."
 
+**Langage outils** : BigQuery (SQL), Power BI Desktop.  
+**Dataset** : `fraud_combined.csv` (combinaison de fraud_train/test).  
+**Objectifs** :  
+- SQL : Auditer la structure de la table (head, info, describe, imbalance).  
+- Power BI : Feature engineering (âge, distances, bins), calculs KPIs (taux de fraude, montant fraudé, etc.), visualisations (fraudes par ville/sexe, catégorie, âge, mois, heure, etc.).  
+
 ### 1 : Explorer la Structure de la Base de Données
 - **Objectif** : Auditer la structure des tables `fraud_train` et `fraud_test` pour comprendre les colonnes, leurs types et la taille des données, en préparation de l’analyse des fraudes.
 - **Résultats** : 
@@ -33,23 +39,7 @@
   - [mission3_head.jpg](figs/mission3_head.jpg) : Capture d’écran des 5 premières lignes
   - [mission3_count.jpg](figs/mission3_count.jpg) : Capture d’écran du comptage
 
-**Technologies** : BigQuery (SQL), Power BI Desktop.  
-**Dataset** : `fraud_combined.csv` (combinaison de fraud_train/test).  
-**Objectifs** :  
-- SQL : Auditer la structure de la table (head, info, describe, imbalance).  
-- Power BI : Feature engineering (âge, distances, bins), calculs KPIs (taux de fraude, montant fraudé, etc.), visualisations (fraudes par ville/sexe, catégorie, âge, mois, heure, etc.).  
 
-## Structure du Référentiel
-- `data/` : Dataset `fraud_combined.csv`.
-- `sql/` : Script SQL pour exploration de la structure.
-- `powerbi/` : Fichier .pbix du tableau de bord.
-- `figs/` : Exports CSV et captures d’écran des visualisations.
-
-## Installation et Utilisation
-1. Clonez le repo : `git clone https://github.com/votreusername/fraud-detection-sql-powerbi.git`.
-2. Importez `fraud_combined.csv` dans BigQuery.
-3. Exécutez le script SQL dans BigQuery, exportez les résultats en CSV.
-4. Ouvrez `fraud_dashboard.pbix` dans Power BI Desktop, chargez les CSV.
 
 ## Insights Clés
 - Dataset déséquilibré : 0,58% de fraudes.
